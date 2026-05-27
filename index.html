@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khóa học Claude AI Cơ Bản — Biến AI thành Cộng Sự Điều Hành giúp nhân sự văn phòng tiết kiệm 2 giờ mỗi ngày, x2 chất lượng công việc. Không cần biết lập trình.">
+  <meta name="keywords" content="Claude AI, khóa học AI, AI cho văn phòng, Sunext AI, tự động hóa văn phòng, prompt engineering">
+  <meta name="author" content="Sunext AI">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Claude AI Cơ Bản — Cộng Sự Điều Hành Cho Nhân Sự Văn Phòng | Sunext AI">
+  <meta property="og:description" content="Giải phóng 2 giờ mỗi ngày, x2 chất lượng công việc với Claude AI. Không cần kiến thức lập trình.">
+  <meta property="og:type" content="website">
+
+  <title>Claude AI Cơ Bản - Cộng Sự Điều Hành Cho Nhân Sự Văn Phòng | Sunext AI</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="navbar" id="navbar" aria-label="Điều hướng chính">
+    <div class="container nav-container">
+      <a href="#" class="logo" aria-label="Sunext AI - Trang chủ">
+        <span class="logo-text">SUNEXT</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a href="#pain-points" class="nav-link" role="menuitem">Nỗi đau</a></li>
+        <li role="none"><a href="#paradigm-shift" class="nav-link" role="menuitem">Giải pháp</a></li>
+        <li role="none"><a href="#curriculum" class="nav-link" role="menuitem">Lộ trình</a></li>
+        <li role="none"><a href="#pricing" class="nav-link" role="menuitem">Đăng ký</a></li>
+      </ul>
+
+      <a href="#pricing" class="btn btn-primary nav-cta" aria-label="Đăng ký khóa học ngay">Đăng Ký Ngay</a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="navLinks">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ============================================
+       SECTION 1: HERO
+       ============================================ -->
+  <section id="hero" class="hero-section reveal">
+    <div class="hero-bg-wrapper">
+      <img src="hero-bg-new.png" alt="" class="hero-bg" aria-hidden="true" loading="eager">
+      <div class="hero-bg-overlay" aria-hidden="true"></div>
+    </div>
+
+    <div class="container hero-content">
+      <!-- Badge pill -->
+      <div class="badge-pill" aria-label="Khóa học nổi bật">
+        🔥 Khóa học ứng dụng AI #1 cho dân văn phòng
+      </div>
+
+      <!-- Main headline — single h1 for SEO -->
+      <h1 class="hero-title">
+        Sở Hữu "Cộng Sự Điều Hành" Claude AI –
+        <br>
+        <span class="accent-text">Giải Phóng 2 Giờ Mỗi Ngày, X2 Chất Lượng Công Việc</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-subtitle">
+        Giải pháp Ready-to-run giúp nhân sự văn phòng xây dựng quy trình chuẩn (SOP) tự động hóa văn bản, báo cáo và kế hoạch — Hoàn toàn không cần kiến thức lập trình.
+      </p>
+
+      <!-- CTA group -->
+      <div class="hero-cta-group">
+        <a href="#pricing" class="btn btn-primary btn-large" id="heroCta">
+          Trang Bị Cộng Sự Ngay
+        </a>
+        <a href="#curriculum" class="btn btn-secondary btn-large" id="heroCtaSecondary" style="color: #ffffff; border-color: rgba(255, 255, 255, 0.4);">
+          Xem Lộ Trình Học
+        </a>
+      </div>
+
+      <!-- Countdown timer -->
+      <div class="countdown-timer" aria-label="Đồng hồ đếm ngược ưu đãi">
+        <span class="countdown-label">Ưu đãi kết thúc sau:</span>
+        <div class="countdown-digits" id="countdown">
+          <div class="countdown-block">
+            <span class="countdown-number" id="countdownDays">00</span>
+            <span class="countdown-unit">Ngày</span>
+          </div>
+          <span class="countdown-separator" aria-hidden="true">:</span>
+          <div class="countdown-block">
+            <span class="countdown-number" id="countdownHours">00</span>
+            <span class="countdown-unit">Giờ</span>
+          </div>
+          <span class="countdown-separator" aria-hidden="true">:</span>
+          <div class="countdown-block">
+            <span class="countdown-number" id="countdownMinutes">00</span>
+            <span class="countdown-unit">Phút</span>
+          </div>
+          <span class="countdown-separator" aria-hidden="true">:</span>
+          <div class="countdown-block">
+            <span class="countdown-number" id="countdownSeconds">00</span>
+            <span class="countdown-unit">Giây</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 1.5: COURSE SUMMARY
+       ============================================ -->
+  <section class="course-summary-section" style="margin-top: -60px; position: relative; z-index: 10;">
+    <div class="container container-wide">
+      <div class="course-summary-grid">
+        
+        <div class="course-summary-col">
+          <div style="font-weight: 800; font-size: 1.25rem; color: #111827; margin-bottom: 0.5rem;">6 modules</div>
+          <div style="font-size: 0.95rem; color: #4b5563; line-height: 1.5;">Bao gồm 40 video, bài tập thực hành ứng dụng</div>
+        </div>
+        
+        <div class="course-summary-col">
+          <div style="font-weight: 800; font-size: 1.25rem; color: #111827; margin-bottom: 0.5rem;">9 giờ học</div>
+          <div style="font-size: 0.95rem; color: #4b5563; line-height: 1.5;">Học theo hình thức video bài giảng (e-learning)</div>
+        </div>
+        
+        <div class="course-summary-col">
+          <div style="font-weight: 800; font-size: 1.25rem; color: #111827; margin-bottom: 0.5rem;">Ngày khai giảng</div>
+          <div style="font-size: 0.95rem; color: #4b5563; line-height: 1.5;">31/05/2026</div>
+        </div>
+        
+        <div class="course-summary-col">
+          <div style="font-weight: 800; font-size: 1.25rem; color: #111827; margin-bottom: 0.5rem;">Đối tượng phù hợp</div>
+          <div style="font-size: 0.95rem; color: #4b5563; line-height: 1.5;">Nhân viên văn phòng, Team lead/Managers, Startup / SME muốn tăng năng suất bằng AI</div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 2: INSTANT AUTHORITY
+       ============================================ -->
+  <section id="authority" class="authority-section reveal">
+    <div class="container">
+      <!-- Partner Logos Marquee -->
+      <div class="partner-logos-wrapper">
+        <div class="partner-logos-track">
+          <!-- Nhóm logo thứ 1 -->
+          <div class="partner-logos-group">
+            <img src="logos/1.jpg" alt="Partner Logo 1" class="partner-logo">
+            <img src="logos/2.jpg" alt="Partner Logo 2" class="partner-logo">
+            <img src="logos/3.jpg" alt="Partner Logo 3" class="partner-logo">
+            <img src="logos/4.jpg" alt="Partner Logo 4" class="partner-logo">
+            <img src="logos/5.jpg" alt="Partner Logo 5" class="partner-logo">
+            <img src="logos/6.jpg" alt="Partner Logo 6" class="partner-logo">
+            <img src="logos/7.jpg" alt="Partner Logo 7" class="partner-logo">
+            <img src="logos/8.jpg" alt="Partner Logo 8" class="partner-logo">
+            <img src="logos/9.jpg" alt="Partner Logo 9" class="partner-logo">
+            <img src="logos/10.jpg" alt="Partner Logo 10" class="partner-logo">
+            <img src="logos/11.jpg" alt="Partner Logo 11" class="partner-logo">
+            <img src="logos/12.jpg" alt="Partner Logo 12" class="partner-logo">
+            <img src="logos/13.jpg" alt="Partner Logo 13" class="partner-logo">
+            <img src="logos/14.jpg" alt="Partner Logo 14" class="partner-logo">
+            <img src="logos/15.jpg" alt="Partner Logo 15" class="partner-logo">
+          </div>
+          <!-- Nhóm logo thứ 2 (Bản sao để tạo hiệu ứng lặp vô tận) -->
+          <div class="partner-logos-group" aria-hidden="true">
+            <img src="logos/1.jpg" alt="Partner Logo 1" class="partner-logo">
+            <img src="logos/2.jpg" alt="Partner Logo 2" class="partner-logo">
+            <img src="logos/3.jpg" alt="Partner Logo 3" class="partner-logo">
+            <img src="logos/4.jpg" alt="Partner Logo 4" class="partner-logo">
+            <img src="logos/5.jpg" alt="Partner Logo 5" class="partner-logo">
+            <img src="logos/6.jpg" alt="Partner Logo 6" class="partner-logo">
+            <img src="logos/7.jpg" alt="Partner Logo 7" class="partner-logo">
+            <img src="logos/8.jpg" alt="Partner Logo 8" class="partner-logo">
+            <img src="logos/9.jpg" alt="Partner Logo 9" class="partner-logo">
+            <img src="logos/10.jpg" alt="Partner Logo 10" class="partner-logo">
+            <img src="logos/11.jpg" alt="Partner Logo 11" class="partner-logo">
+            <img src="logos/12.jpg" alt="Partner Logo 12" class="partner-logo">
+            <img src="logos/13.jpg" alt="Partner Logo 13" class="partner-logo">
+            <img src="logos/14.jpg" alt="Partner Logo 14" class="partner-logo">
+            <img src="logos/15.jpg" alt="Partner Logo 15" class="partner-logo">
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats grid -->
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="1000">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-desc">Nhân sự đã áp dụng</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="10">0</span>
+          <span class="stat-suffix">h</span>
+          <span class="stat-desc">Tiết kiệm trung bình mỗi tuần</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="95">0</span>
+          <span class="stat-suffix">%</span>
+          <span class="stat-desc">Hài lòng sau khóa học</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number-static">24/7</span>
+          <span class="stat-desc">Cộng sự không nghỉ phép</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 3: PAIN POINTS
+       ============================================ -->
+  <section id="pain-points" class="pain-section reveal">
+    <div class="container">
+      <span class="section-label">BẠN CÓ ĐANG...</span>
+      <h2 class="section-title">Chấm Dứt Ngay Tình Trạng Làm Việc Như Một Cái Máy</h2>
+      <p class="section-subtitle">Nếu bạn thấy mình trong ít nhất 1 tình huống dưới đây, đã đến lúc thay đổi.</p>
+
+      <div class="pain-grid">
+        <!-- Pain card 1: Email slavery -->
+        <div class="pain-card glass-card">
+          <div class="pain-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M22 4L12 13L2 4"/>
+            </svg>
+          </div>
+          <h3 class="pain-title">Quá Tải Với Khối Lượng Email Khổng Lồ</h3>
+          <p class="pain-desc">Mất hàng giờ mỗi ngày để phân loại và trả lời những email lặp đi lặp lại. Việc liên tục bị gián đoạn khiến bạn không thể tập trung vào các công việc chuyên môn quan trọng, làm giảm đáng kể hiệu năng tổng thể.</p>
+        </div>
+
+        <!-- Pain card 2: Report nightmare -->
+        <div class="pain-card glass-card">
+          <div class="pain-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3 class="pain-title">Áp Lực Xử Lý Tài Liệu & Viết Báo Cáo</h3>
+          <p class="pain-desc">Phải "đánh vật" với hàng chục trang tài liệu PDF hay Word dài lê thê chỉ để chắt lọc vài ý chính. Việc tóm tắt thông tin và lập báo cáo tốn quá nhiều thời gian mà vẫn tiềm ẩn rủi ro sai sót dữ liệu.</p>
+        </div>
+
+        <!-- Pain card 3: Creative block -->
+        <div class="pain-card glass-card">
+          <div class="pain-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+              <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+            </svg>
+          </div>
+          <h3 class="pain-title">Bế Tắc Ý Tưởng & Kế Hoạch Công Việc</h3>
+          <p class="pain-desc">Thường xuyên cạn kiệt ý tưởng khi phải xây dựng nội dung, bài thuyết trình hay kế hoạch kinh doanh. Việc luôn phải tự mình bắt đầu mọi thứ từ con số 0 làm lãng phí hàng giờ làm việc quý báu của bạn.</p>
+        </div>
+
+        <!-- Pain card 4: Fear of replacement -->
+        <div class="pain-card glass-card">
+          <div class="pain-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/>
+              <polyline points="17 18 23 18 23 12"/>
+            </svg>
+          </div>
+          <h3 class="pain-title">Nỗi Lo Tụt Hậu Vì Kém Kỹ Năng AI</h3>
+          <p class="pain-desc">Nhìn đồng nghiệp làm việc nhanh gấp đôi nhờ ứng dụng AI, trong khi bạn vẫn loay hoay xử lý thủ công vì rào cản công nghệ. Bạn e ngại và lầm tưởng rằng dùng AI là phải am hiểu kỹ thuật lập trình phức tạp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 4: PARADIGM SHIFT
+       ============================================ -->
+  <section id="paradigm-shift" class="paradigm-section reveal">
+    <div class="container">
+      <span class="section-label">GIẢI PHÁP</span>
+      <h2 class="section-title">Claude Không Phải Chatbot — Đây Là "Bộ Não Số" Nhân Bản Năng Lực Của Bạn</h2>
+      <p class="section-subtitle">Hãy quên đi những công cụ hỏi-đáp thông thường. Claude là Cộng sự điều hành hiểu ngôn ngữ tự nhiên, xử lý tài liệu dài và tạo ra output chất lượng chuyên gia — không đòi tăng lương, không xin nghỉ phép.</p>
+
+      <!-- Before / After comparison -->
+      <div class="comparison-container">
+        <!-- Before card -->
+        <div class="before-card glass-card">
+          <span class="comparison-badge comparison-badge--before">TRƯỚC ĐÂY</span>
+          <div class="comparison-icon" aria-hidden="true">⏰</div>
+          <h3 class="comparison-time">45 phút</h3>
+          <p class="comparison-desc">Toát mồ hôi viết email từ chối đối tác sao cho khéo léo, chuyên nghiệp</p>
+        </div>
+
+        <!-- VS divider -->
+        <div class="vs-divider" aria-hidden="true">
+          <span class="vs-circle">VS</span>
+        </div>
+
+        <!-- After card -->
+        <div class="after-card glass-card">
+          <span class="comparison-badge comparison-badge--after">VỚI CLAUDE AI</span>
+          <div class="comparison-icon" aria-hidden="true">⚡</div>
+          <h3 class="comparison-time">10 giây</h3>
+          <p class="comparison-desc">Gõ: "Viết email từ chối khéo léo, giữ quan hệ tốt" → Xong! Chỉnh sửa nhẹ là gửi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 5: CURRICULUM
+       ============================================ -->
+  <section id="curriculum" class="curriculum-section reveal">
+    <div class="container">
+      <span class="section-label">LỘ TRÌNH THỰC CHIẾN</span>
+      <h2 class="section-title">Học Để Áp Dụng, Không Học Lý Thuyết Suông</h2>
+      <p class="section-subtitle">Mỗi Module được thiết kế theo tác vụ thực tế. Học xong buổi sáng — áp dụng ngay buổi chiều.</p>
+
+      <div class="module-grid">
+        <!-- Module 1 -->
+        <div class="module-card glass-card">
+          <span class="module-number">01</span>
+          <h3 class="module-title">Trợ Lý Giao Tiếp SOP</h3>
+          <p class="module-subtitle">Chấm dứt xử lý thủ công email &amp; văn bản</p>
+          <ul class="module-outcomes" aria-label="Kết quả đầu ra của Module 1">
+            <li><span class="check-icon" aria-hidden="true">✓</span> Viết &amp; phản hồi email chuyên nghiệp trong 10 giây</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> Dịch thuật giữ nguyên ngữ cảnh chuyên ngành</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> Tinh chỉnh văn phong từ "bình dân" sang "cấp quản lý"</li>
+          </ul>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="module-card glass-card">
+          <span class="module-number">02</span>
+          <h3 class="module-title">Hệ Thống Xử Lý Dữ Liệu</h3>
+          <p class="module-subtitle">Nhân bản năng lực phân tích của chuyên gia</p>
+          <ul class="module-outcomes" aria-label="Kết quả đầu ra của Module 2">
+            <li><span class="check-icon" aria-hidden="true">✓</span> Tóm tắt file PDF/Word 50 trang → 1 trang A4 ý chính</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> Trích xuất dữ liệu quan trọng từ báo cáo thô</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> Tạo báo cáo Dashboard tổng hợp cho sếp</li>
+          </ul>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="module-card glass-card">
+          <span class="module-number">03</span>
+          <h3 class="module-title">Sub-agents Sáng Tạo</h3>
+          <p class="module-subtitle">Đột phá tư duy, lên kế hoạch cấp tốc</p>
+          <ul class="module-outcomes" aria-label="Kết quả đầu ra của Module 3">
+            <li><span class="check-icon" aria-hidden="true">✓</span> Lên dàn ý Pitching &amp; bài thuyết trình trong 2 phút</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> Thiết lập lịch trình &amp; phân bổ task tự động</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> Brainstorm 20 ý tưởng sáng tạo trong 30 giây</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 6: VALUE STACKING (NEW DESIGN)
+       ============================================ -->
+  <section id="value-stacking" class="value-section reveal">
+    <div class="container" style="max-width: 900px;">
+      <div class="value-table-container glass-card" style="padding: 0; overflow: hidden; border-radius: 16px; background: #ffffff; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: none;">
+        <div class="value-header" style="background: linear-gradient(90deg, #1f0b00 0%, #3a1500 50%, #5d2200 100%); padding: 1.5rem; text-align: center;">
+          <h2 style="color: #ffffff; font-size: clamp(1.5rem, 4vw, 2rem); margin: 0; font-weight: 700; letter-spacing: -0.02em;">Học phí và ưu đãi trong tháng</h2>
+        </div>
+        <div class="value-content" style="padding: 2.5rem clamp(1rem, 5vw, 3rem);">
+          <div class="value-row header-row" style="display: flex; justify-content: space-between; font-weight: 700; color: #f97316; border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem; margin-bottom: 1.5rem; font-size: 1.1rem;">
+            <span>Hạng mục</span>
+            <span>Giá trị thực tế</span>
+          </div>
+          
+          <div class="value-row" style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; align-items: flex-start; gap: 1.5rem;">
+            <div style="flex: 1; font-size: 0.95rem; color: #4b5563; line-height: 1.6; text-align: left;">Chương trình đào tạo thực chiến (6 Module): Lộ trình từ hiểu bản chất Claude đến việc làm chủ Claude Cowork cơ bản trong công việc thực tế.</div>
+            <div style="font-weight: 700; color: #111827; font-size: 1.05rem; white-space: nowrap;">4.200.000đ</div>
+          </div>
+          
+          <div class="value-row" style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; align-items: flex-start; gap: 1.5rem;">
+            <div style="flex: 1; font-size: 0.95rem; color: #4b5563; line-height: 1.6; text-align: left;"><strong style="color: #111827;">Bonus 1: "Claude Code Setup Handbook"</strong>: Bộ handbook tổng hợp các prompt cài đặt và vận hành Claude Code theo từng bước, được thiết kế để người Non-tech có thể bắt đầu dễ dàng mà không cần nền tảng kỹ thuật.</div>
+            <div style="font-weight: 700; color: #111827; font-size: 1.05rem; white-space: nowrap;">399.000đ</div>
+          </div>
+          
+          <div class="value-row" style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; align-items: flex-start; gap: 1.5rem;">
+            <div style="flex: 1; font-size: 0.95rem; color: #4b5563; line-height: 1.6; text-align: left;"><strong style="color: #111827;">Bonus 2: "Claude AI Playbook"</strong>: Thư viện Prompt & Project Templates được thiết kế cho 5 nhóm (Ops, Marketing, BD, Founder). Copy-paste là có kết quả ngay.</div>
+            <div style="font-weight: 700; color: #111827; font-size: 1.05rem; white-space: nowrap;">399.000đ</div>
+          </div>
+          
+          <div class="value-row" style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; align-items: flex-start; gap: 1.5rem;">
+            <div style="flex: 1; font-size: 0.95rem; color: #4b5563; line-height: 1.6; text-align: left;"><strong style="color: #111827;">Bonus 3: "The Security & Privacy Protocol"</strong>: Cẩm nang thiết lập Claude an toàn cho dữ liệu doanh nghiệp (Giải quyết nỗi sợ lớn nhất của Owner).</div>
+            <div style="font-weight: 700; color: #111827; font-size: 1.05rem; white-space: nowrap;">399.000đ</div>
+          </div>
+          
+          <div class="value-total" style="border-top: 1px solid #e5e7eb; padding-top: 2rem; margin-top: 0.5rem; text-align: center;">
+            <div style="font-size: 1.1rem; font-weight: 700; color: #111827; text-transform: uppercase; letter-spacing: 0.05em;">TỔNG GIÁ TRỊ NHẬN ĐƯỢC</div>
+            <div style="font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; color: #f97316; line-height: 1.2; margin-top: 0.5rem;">5.399.000đ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 7: PRICING
+       ============================================ -->
+  <section id="pricing" class="pricing-section reveal">
+    <div class="container">
+      <h2 class="section-title">Khoản Đầu Tư Nhỏ Nhất Để Sở Hữu "Cộng Sự Điều Hành"</h2>
+
+      <div class="pricing-card glass-card">
+        <span class="pricing-label">ƯU ĐÃI EARLYBIRD</span>
+
+        <div class="pricing-prices">
+          <span class="price-old">5.399.000đ</span>
+          <span class="price-new">997.000đ</span>
+          <span class="price-savings">Tiết kiệm 4.402.000đ</span>
+        </div>
+
+        <hr class="pricing-divider" aria-hidden="true">
+
+        <ul class="pricing-checklist" aria-label="Bao gồm trong gói">
+          <li><span class="check-icon" aria-hidden="true">✓</span> Khóa học Claude AI Cơ Bản (3 Modules thực chiến)</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span> Bộ 100+ Prompt Ready-to-run — Copy &amp; Paste là xong việc</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span> Privacy Protocol — Cẩm nang bảo mật dữ liệu công ty khi dùng AI</li>
+          <li><span class="check-icon" aria-hidden="true">✓</span> Nhóm hỗ trợ riêng — Giải đáp 1-1 với chuyên gia Sunext AI</li>
+        </ul>
+
+        <div class="course-info-box" style="background: rgba(249, 134, 30, 0.05); padding: 1.2rem; border-radius: 12px; margin-bottom: 1.5rem; text-align: left; border: 1px solid rgba(249, 134, 30, 0.2);">
+          <p style="margin-bottom: 0.8rem; color: var(--text-primary); font-weight: 600; display: flex; gap: 0.5rem; line-height: 1.5;">
+            <span>📅</span> Ngày khai giảng: Chủ Nhật, 31/05/2026
+          </p>
+          <p style="margin-bottom: 0; color: var(--text-primary); font-weight: 600; display: flex; gap: 0.5rem; line-height: 1.5;">
+            <span>📍</span> Địa chỉ: 93/16 Xô Viết Nghệ Tĩnh, Phường Gia Định, Hồ Chí Minh
+          </p>
+        </div>
+
+        <a href="#" class="btn btn-primary btn-large btn-pricing" id="pricingCta">
+          Trang Bị Cộng Sự Ngay — Chỉ 997.000đ
+        </a>
+
+        <p class="pricing-note">Đầu tư 1 lần, tiết kiệm hàng triệu đồng giá trị thời gian mỗi tháng</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 8: FAQ
+       ============================================ -->
+  <section id="faq" class="faq-section reveal">
+    <div class="container">
+      <span class="section-label">CÂU HỎI THƯỜNG GẶP</span>
+      <h2 class="section-title">Giải Đáp Mọi Thắc Mắc Trước Khi Bạn Quyết Định</h2>
+
+      <div class="faq-list">
+        <!-- FAQ 1 -->
+        <div class="faq-item glass-card" id="faq1">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq1Answer">
+            <span>Tôi không biết gì về công nghệ/lập trình, có học được không?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq1Answer" role="region" aria-labelledby="faq1">
+            <p>Chắc chắn là CÓ! Khóa học được thiết kế dành riêng cho người Non-tech. Bạn chỉ cần biết gõ tiếng Việt và kỹ năng Copy-Paste cơ bản. Mọi thao tác đều được hướng dẫn từng bước 1-2-3 đơn giản.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item glass-card" id="faq2">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq2Answer">
+            <span>Tôi quá bận, không có thời gian học thì sao?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq2Answer" role="region" aria-labelledby="faq2">
+            <p>Đó chính là lý do bạn CẦN khóa học này nhất! Với bộ Playbook 100+ Prompt có sẵn, bạn có thể áp dụng ngay để tiết kiệm 1-2 giờ làm việc từ ngày đầu tiên. Lấy lại thời gian để học tiếp — đó chính là vòng lặp hiệu suất.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item glass-card" id="faq3">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq3Answer">
+            <span>Tôi đang dùng ChatGPT rồi, tại sao nên học Claude?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq3Answer" role="region" aria-labelledby="faq3">
+            <p>Claude có khả năng xử lý tài liệu dài vượt trội (lên đến 200,000 tokens), văn phong tự nhiên hơn và đặc biệt phù hợp cho các tác vụ văn phòng chuyên sâu. Khóa học dạy bạn khai thác sức mạnh riêng biệt này.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item glass-card" id="faq4">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq4Answer">
+            <span>Dùng AI có lo rò rỉ dữ liệu công ty không?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq4Answer" role="region" aria-labelledby="faq4">
+            <p>Hoàn toàn an tâm! Bonus "Privacy Protocol" trong khóa học sẽ hướng dẫn bạn quy trình bảo mật dữ liệu chuẩn doanh nghiệp khi sử dụng AI. Bạn sẽ biết cách dùng AI an toàn mà không vi phạm chính sách nội bộ.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item glass-card" id="faq5">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq5Answer">
+            <span>Học xong có được hỗ trợ gì không?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq5Answer" role="region" aria-labelledby="faq5">
+            <p>Bạn sẽ được tham gia nhóm hỗ trợ riêng của Sunext AI, được giải đáp thắc mắc 1-1 với chuyên gia. Ngoài ra, bộ 100+ Prompt sẽ được cập nhật liên tục để bạn luôn có công cụ mới nhất.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 9: FINAL CTA
+       ============================================ -->
+  <section id="final-cta" class="final-cta-section reveal">
+    <div class="container">
+      <h2 class="section-title">Đừng Để Ngày Mai Giống Hệt Hôm Nay</h2>
+      <p class="section-subtitle">Hàng trăm nhân sự văn phòng đã biến Claude thành "Cộng sự điều hành" của họ. Đến lượt bạn.</p>
+      <a href="#pricing" class="btn btn-primary btn-large" id="finalCta">
+        Bắt Đầu Tối Ưu Hiệu Suất — 997.000đ
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo-text">SUNEXT AI</span>
+      </div>
+
+      <p class="footer-copyright">© 2025 Sunext AI. Mọi quyền được bảo lưu.</p>
+
+      <div class="footer-social" aria-label="Liên hệ và mạng xã hội">
+        <a href="#" class="social-link" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Email liên hệ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M22 4L12 13L2 4"/>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Zalo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================
+       MODAL REGISTRATION FORM
+       ============================================ -->
+  <div id="registrationModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-container glass-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" aria-label="Đóng form">&times;</button>
+      <h2 id="modalTitle" class="modal-title">Đăng Ký Khóa Học</h2>
+      <p class="modal-subtitle">Để lại thông tin, chuyên viên Sunext sẽ liên hệ hỗ trợ bạn trong 15 phút.</p>
+      
+      <form id="registrationForm" class="registration-form">
+        <div class="form-group">
+          <label for="regName">Họ và Tên</label>
+          <input type="text" id="regName" name="name" placeholder="Ví dụ: Nguyễn Văn A" required>
+        </div>
+        <div class="form-group">
+          <label for="regPhone">Số điện thoại</label>
+          <input type="tel" id="regPhone" name="phone" placeholder="Ví dụ: 0901234567" required>
+        </div>
+        <div class="form-group">
+          <label for="regEmail">Email</label>
+          <input type="email" id="regEmail" name="email" placeholder="Ví dụ: email@gmail.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-large btn-submit">
+          Xác Nhận Đăng Ký
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <script src="script.js"></script>
+
+  <!-- Sticky Hello Bar -->
+  <div class="hello-bar" id="helloBar">
+    <div class="hb-image">
+      <img src="hello-bar-img.png" alt="Khóa học Claude AI">
+    </div>
+    <div class="hb-text">
+      <div class="hb-title">Claude Productivity: X2 Chất lượng công việc với cộng sự điều hành Claude AI</div>
+      <div class="hb-pricing">
+        <span class="hb-price-new">997.000đ</span>
+        <span class="hb-price-old">5.399.000đ</span>
+        <span class="hb-saving">Tiết kiệm 4.402.000đ</span>
+      </div>
+    </div>
+    <a href="#pricing" class="btn btn-primary" style="padding: 12px 24px; font-weight: 700; border-radius: 30px; white-space: nowrap; font-size: 1rem;">Tham gia ngay</a>
+  </div>
+</body>
+</html>
